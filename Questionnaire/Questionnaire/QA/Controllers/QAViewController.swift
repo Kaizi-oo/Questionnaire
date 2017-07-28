@@ -37,6 +37,20 @@ class QAViewController: UIViewController {
     
     var answerCard: UICollectionView! //答题卡
     
+    var currentController: QAQuestionViewController?
+    var lastController: QAQuestionViewController?
+    var nextController: QAQuestionViewController?
+    
+    enum QADirection {
+        case none
+        case last
+        case next
+        
+        
+    }
+    
+    var direction: QADirection = .none
+    
     struct AnswerCardFrame {
         let count: Int
         let maximumInLine: Int = 9  //单行最大
@@ -87,6 +101,15 @@ class QAViewController: UIViewController {
         //取消通知监听
         NotificationCenter.default.removeObserver(self)
     }
+    
+    func setLastController() {
+        //
+        
+    }
+    func setNextController() {
+        //
+    }
+    
     
     //TODO: lifeCircle
     override func viewDidLoad() {
@@ -173,15 +196,22 @@ extension QAViewController {
         
         
         // 根据数据个数，设置controller的数组，并设置数据源
-        for i in 0..<questions.count {
+        for _ in 0..<2 {
             let current = QAQuestionViewController()
             current.view.frame = pageViewController.view.bounds
-            current.dataSource = (questions[i], realAnswer[i])
+//            current.dataSource = (questions[i], realAnswer[i])
             
             viewControllers.append(current)
         }
         
-        pageViewController.setViewControllers([viewControllers.first!], direction: .forward, animated: true) { (bool) in
+//        currentController = QAQuestionViewController()
+//        currentController?.view.frame = pageViewController.view.bounds
+//        currentController?.dataSource = (questions[0], realAnswer[0])
+        
+        currentController = viewControllers.first as? QAQuestionViewController
+        currentController?.dataSource = (questions[0], realAnswer[0])
+
+        pageViewController.setViewControllers([currentController!], direction: .forward, animated: true) { (bool) in
             print("设置完成")
             self.addChildViewController(self.pageViewController)
             self.view.addSubview(self.pageViewController.view)
@@ -336,21 +366,73 @@ extension QAViewController : UIPageViewControllerDelegate, UIPageViewControllerD
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         //获取即将显示的页面的后一页
-        let index = viewControllers.index(of: viewController)!
-        if index == viewControllers.count - 1 { //第一条
+//        let index = viewControllers.index(of: viewController)!
+//        if index == viewControllers.count - 1 { //第一条
+//            return nil
+//        }
+//        return viewControllers[index + 1]
+        print("after")
+        if pageIndex == questions.count - 1 { //最后一条
             return nil
         }
-        return viewControllers[index + 1]
+        direction = .next
+        
+        if currentController == viewControllers.first {
+            let vc = viewControllers.last as? QAQuestionViewController
+            vc?.dataSource = (questions[pageIndex + 1], realAnswer[pageIndex + 1])
+            vc?.title = "\(pageIndex + 1)"
+
+            nextController = viewControllers.last as? QAQuestionViewController
+//            lastController = nil
+
+            return vc
+        }else
+        {
+            let vc = viewControllers.first as? QAQuestionViewController
+            vc?.dataSource = (questions[pageIndex], realAnswer[pageIndex])
+            vc?.title = "\(pageIndex + 1)"
+
+            nextController = viewControllers.first as? QAQuestionViewController
+//            lastController = nil
+
+            return vc
+        }
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         //获取即将显示的页面的前一页
-        let index = viewControllers.index(of: viewController)!
-        if index == 0 { //第一条
+//        let index = viewControllers.index(of: viewController)!
+//        if index == 0 { //第一条
+//            return nil
+//        }
+//        
+//        return viewControllers[index - 1]
+        print("before")
+
+        
+        if pageIndex == 0 { //当前页是第一页，那么
             return nil
         }
         
-        return viewControllers[index - 1]
+        direction = .last
+        if currentController == viewControllers.first {
+            let vc = viewControllers.last as? QAQuestionViewController
+            vc?.dataSource = (questions[pageIndex - 1], realAnswer[pageIndex - 1])
+            vc?.title = "\(pageIndex - 1)"
+            lastController = viewControllers.first as? QAQuestionViewController
+            nextController = nil
+
+            return vc
+        }else
+        {
+            let vc = viewControllers.first as? QAQuestionViewController
+            vc?.title = "\(pageIndex - 1)"
+
+            vc?.dataSource = (questions[pageIndex - 1], realAnswer[pageIndex - 1])
+            lastController = viewControllers.first as? QAQuestionViewController
+            nextController = nil
+            return vc
+        }
     }
 
     func pageViewControllerSupportedInterfaceOrientations(_ pageViewController: UIPageViewController) -> UIInterfaceOrientationMask {
@@ -360,10 +442,26 @@ extension QAViewController : UIPageViewControllerDelegate, UIPageViewControllerD
     //将要到--
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         //提前设置页码数据，如果翻页中途取消的话，在下面设置回去
-        let finishOne = pendingViewControllers.first
-        let index  = viewControllers.index(of: finishOne!)
-        pageIndex = index!
-        pageLabel.text = "\(index! + 1)/\(questions.count)"
+//        let finishOne = pendingViewControllers.first
+//        let index  = viewControllers.index(of: finishOne!)
+//        pageIndex = index!
+
+        if direction == .last { //想上 --
+            pageIndex -= 1
+            print("will Trans to last")
+
+        }else if direction == .next
+        {
+            pageIndex += 1
+            print("will Trans to next")
+
+        }else
+        {
+            print("direction 出错了")
+        }
+        
+        currentController = pendingViewControllers.first as? QAQuestionViewController  //设置当前
+        pageLabel.text = "\(pageIndex + 1)/\(questions.count)"
     }
     func pageViewControllerPreferredInterfaceOrientationForPresentation(_ pageViewController: UIPageViewController) -> UIInterfaceOrientation {
         return .portrait
@@ -371,12 +469,28 @@ extension QAViewController : UIPageViewControllerDelegate, UIPageViewControllerD
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         //判断是否成功，不成功，重新设置回去
+        print("complete \(completed)")
+
         if !completed {
             //
             let finishOne = previousViewControllers.first
-            let index  = viewControllers.index(of: finishOne!)
-            pageIndex = index!
-            pageLabel.text = "\(index! + 1)/\(questions.count)"
+//            let index  = viewControllers.index(of: finishOne!)
+            currentController = previousViewControllers.first as? QAQuestionViewController  //设置当前
+            if direction == .last {
+                pageIndex += 1
+            }else if direction == .next
+            {
+                pageIndex -= 1
+            }else
+            {
+                print("direction 出错了")
+            }
+            
+            
+            pageLabel.text = "\(pageIndex + 1)/\(questions.count)"
+        }else
+        {
+            
         }
     }
 }

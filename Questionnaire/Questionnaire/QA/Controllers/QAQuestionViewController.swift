@@ -51,6 +51,7 @@ class QAQuestionViewController: UIViewController {
             realAnswer = data.1
             view.addSubview(tableView)
             tableView.reloadData()
+            
         }
     }
     var question: QAQuestion?
@@ -108,7 +109,6 @@ extension QAQuestionViewController: UITableViewDataSource, UITableViewDelegate
             
             hole.append(subjectAttr)
             hole.append(modeAttr)
-            
             
             cell.subjectLabel.attributedText = hole
 //                = "\(question?.question ?? "adasdas")    -    " + "\(question?.questionId ?? 0)"
