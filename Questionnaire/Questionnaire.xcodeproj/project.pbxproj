@@ -157,8 +157,8 @@
 		8DCE21E51F2AEB110048EF87 /* QA */ = {
 			isa = PBXGroup;
 			children = (
-				8DCE21E61F2AEB110048EF87 /* Controllers */,
 				8DCE21E91F2AEB110048EF87 /* DataSource.txt */,
+				8DCE21E61F2AEB110048EF87 /* Controllers */,
 				8DCE21EA1F2AEB110048EF87 /* Fonts */,
 				8DCE21EC1F2AEB110048EF87 /* Models */,
 				8DCE21EF1F2AEB110048EF87 /* Views */,
