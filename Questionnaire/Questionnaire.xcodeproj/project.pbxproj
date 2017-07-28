@@ -14,6 +14,20 @@
 		8DCE21C21F2AEACC0048EF87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DCE21C01F2AEACC0048EF87 /* LaunchScreen.storyboard */; };
 		8DCE21CD1F2AEACC0048EF87 /* QuestionnaireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCE21CC1F2AEACC0048EF87 /* QuestionnaireTests.swift */; };
 		8DCE21D81F2AEACC0048EF87 /* QuestionnaireUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCE21D71F2AEACC0048EF87 /* QuestionnaireUITests.swift */; };
+		8DCE21F81F2AEB110048EF87 /* QAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCE21E71F2AEB110048EF87 /* QAViewController.swift */; };
+		8DCE21F91F2AEB110048EF87 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCE21E81F2AEB110048EF87 /* QuestionViewController.swift */; };
+		8DCE21FA1F2AEB110048EF87 /* DataSource.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8DCE21E91F2AEB110048EF87 /* DataSource.txt */; };
+		8DCE21FB1F2AEB110048EF87 /* SentyMARUKO-Elementary.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DCE21EB1F2AEB110048EF87 /* SentyMARUKO-Elementary.ttf */; };
+		8DCE21FC1F2AEB110048EF87 /* QAConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCE21ED1F2AEB110048EF87 /* QAConfig.swift */; };
+		8DCE21FD1F2AEB110048EF87 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCE21EE1F2AEB110048EF87 /* QuestionModel.swift */; };
+		8DCE21FE1F2AEB110048EF87 /* AnswerCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCE21F01F2AEB110048EF87 /* AnswerCardCell.swift */; };
+		8DCE21FF1F2AEB110048EF87 /* AnswerCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCE21F11F2AEB110048EF87 /* AnswerCardCell.xib */; };
+		8DCE22001F2AEB110048EF87 /* CYJOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCE21F21F2AEB110048EF87 /* CYJOptionCell.swift */; };
+		8DCE22011F2AEB110048EF87 /* CYJOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCE21F31F2AEB110048EF87 /* CYJOptionCell.xib */; };
+		8DCE22021F2AEB110048EF87 /* CYJSubjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCE21F41F2AEB110048EF87 /* CYJSubjectCell.swift */; };
+		8DCE22031F2AEB110048EF87 /* CYJSubjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCE21F51F2AEB110048EF87 /* CYJSubjectCell.xib */; };
+		8DCE22041F2AEB110048EF87 /* CYJTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCE21F61F2AEB110048EF87 /* CYJTextViewCell.swift */; };
+		8DCE22051F2AEB110048EF87 /* CYJTextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCE21F71F2AEB110048EF87 /* CYJTextViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +61,20 @@
 		8DCE21D31F2AEACC0048EF87 /* QuestionnaireUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuestionnaireUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DCE21D71F2AEACC0048EF87 /* QuestionnaireUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionnaireUITests.swift; sourceTree = "<group>"; };
 		8DCE21D91F2AEACC0048EF87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DCE21E71F2AEB110048EF87 /* QAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QAViewController.swift; sourceTree = "<group>"; };
+		8DCE21E81F2AEB110048EF87 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		8DCE21E91F2AEB110048EF87 /* DataSource.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DataSource.txt; sourceTree = "<group>"; };
+		8DCE21EB1F2AEB110048EF87 /* SentyMARUKO-Elementary.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SentyMARUKO-Elementary.ttf"; sourceTree = "<group>"; };
+		8DCE21ED1F2AEB110048EF87 /* QAConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QAConfig.swift; sourceTree = "<group>"; };
+		8DCE21EE1F2AEB110048EF87 /* QuestionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
+		8DCE21F01F2AEB110048EF87 /* AnswerCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerCardCell.swift; sourceTree = "<group>"; };
+		8DCE21F11F2AEB110048EF87 /* AnswerCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswerCardCell.xib; sourceTree = "<group>"; };
+		8DCE21F21F2AEB110048EF87 /* CYJOptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYJOptionCell.swift; sourceTree = "<group>"; };
+		8DCE21F31F2AEB110048EF87 /* CYJOptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYJOptionCell.xib; sourceTree = "<group>"; };
+		8DCE21F41F2AEB110048EF87 /* CYJSubjectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYJSubjectCell.swift; sourceTree = "<group>"; };
+		8DCE21F51F2AEB110048EF87 /* CYJSubjectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYJSubjectCell.xib; sourceTree = "<group>"; };
+		8DCE21F61F2AEB110048EF87 /* CYJTextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYJTextViewCell.swift; sourceTree = "<group>"; };
+		8DCE21F71F2AEB110048EF87 /* CYJTextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYJTextViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +125,7 @@
 		8DCE21B61F2AEACC0048EF87 /* Questionnaire */ = {
 			isa = PBXGroup;
 			children = (
+				8DCE21E51F2AEB110048EF87 /* QA */,
 				8DCE21B71F2AEACC0048EF87 /* AppDelegate.swift */,
 				8DCE21B91F2AEACC0048EF87 /* ViewController.swift */,
 				8DCE21BB1F2AEACC0048EF87 /* Main.storyboard */,
@@ -123,6 +152,59 @@
 				8DCE21D91F2AEACC0048EF87 /* Info.plist */,
 			);
 			path = QuestionnaireUITests;
+			sourceTree = "<group>";
+		};
+		8DCE21E51F2AEB110048EF87 /* QA */ = {
+			isa = PBXGroup;
+			children = (
+				8DCE21E61F2AEB110048EF87 /* Controllers */,
+				8DCE21E91F2AEB110048EF87 /* DataSource.txt */,
+				8DCE21EA1F2AEB110048EF87 /* Fonts */,
+				8DCE21EC1F2AEB110048EF87 /* Models */,
+				8DCE21EF1F2AEB110048EF87 /* Views */,
+			);
+			path = QA;
+			sourceTree = "<group>";
+		};
+		8DCE21E61F2AEB110048EF87 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8DCE21E71F2AEB110048EF87 /* QAViewController.swift */,
+				8DCE21E81F2AEB110048EF87 /* QuestionViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8DCE21EA1F2AEB110048EF87 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8DCE21EB1F2AEB110048EF87 /* SentyMARUKO-Elementary.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		8DCE21EC1F2AEB110048EF87 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8DCE21ED1F2AEB110048EF87 /* QAConfig.swift */,
+				8DCE21EE1F2AEB110048EF87 /* QuestionModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8DCE21EF1F2AEB110048EF87 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8DCE21F01F2AEB110048EF87 /* AnswerCardCell.swift */,
+				8DCE21F11F2AEB110048EF87 /* AnswerCardCell.xib */,
+				8DCE21F21F2AEB110048EF87 /* CYJOptionCell.swift */,
+				8DCE21F31F2AEB110048EF87 /* CYJOptionCell.xib */,
+				8DCE21F41F2AEB110048EF87 /* CYJSubjectCell.swift */,
+				8DCE21F51F2AEB110048EF87 /* CYJSubjectCell.xib */,
+				8DCE21F61F2AEB110048EF87 /* CYJTextViewCell.swift */,
+				8DCE21F71F2AEB110048EF87 /* CYJTextViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +275,7 @@
 				TargetAttributes = {
 					8DCE21B31F2AEACC0048EF87 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 2TP4P84D9C;
 						ProvisioningStyle = Automatic;
 					};
 					8DCE21C71F2AEACC0048EF87 = {
@@ -233,8 +316,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DCE21C21F2AEACC0048EF87 /* LaunchScreen.storyboard in Resources */,
+				8DCE22031F2AEB110048EF87 /* CYJSubjectCell.xib in Resources */,
+				8DCE21FF1F2AEB110048EF87 /* AnswerCardCell.xib in Resources */,
+				8DCE22051F2AEB110048EF87 /* CYJTextViewCell.xib in Resources */,
+				8DCE22011F2AEB110048EF87 /* CYJOptionCell.xib in Resources */,
 				8DCE21BF1F2AEACC0048EF87 /* Assets.xcassets in Resources */,
 				8DCE21BD1F2AEACC0048EF87 /* Main.storyboard in Resources */,
+				8DCE21FA1F2AEB110048EF87 /* DataSource.txt in Resources */,
+				8DCE21FB1F2AEB110048EF87 /* SentyMARUKO-Elementary.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +349,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DCE21BA1F2AEACC0048EF87 /* ViewController.swift in Sources */,
+				8DCE21FC1F2AEB110048EF87 /* QAConfig.swift in Sources */,
+				8DCE21F81F2AEB110048EF87 /* QAViewController.swift in Sources */,
+				8DCE21FD1F2AEB110048EF87 /* QuestionModel.swift in Sources */,
+				8DCE22041F2AEB110048EF87 /* CYJTextViewCell.swift in Sources */,
+				8DCE21F91F2AEB110048EF87 /* QuestionViewController.swift in Sources */,
+				8DCE22001F2AEB110048EF87 /* CYJOptionCell.swift in Sources */,
+				8DCE21FE1F2AEB110048EF87 /* AnswerCardCell.swift in Sources */,
 				8DCE21B81F2AEACC0048EF87 /* AppDelegate.swift in Sources */,
+				8DCE22021F2AEB110048EF87 /* CYJSubjectCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,7 +511,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2TP4P84D9C;
 				INFOPLIST_FILE = Questionnaire/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tech.kyang.Questionnaire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -426,7 +525,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2TP4P84D9C;
 				INFOPLIST_FILE = Questionnaire/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tech.kyang.Questionnaire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
