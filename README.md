@@ -1,2 +1,10 @@
 # Questionnaire
-问卷
+
+demo 使用**UIPageViewController** 实现，包括单选、多选、简答，题目又分为必选和非必选。
+
+* **QAViewController** 为问卷的主题框架，实现题目切换、提交的逻辑
+
+* **QuestionViewController** 为每个题的实现，包括选中的逻辑，
+
+* 通过**通知**实现问题已选和答题卡之间的通讯
+
