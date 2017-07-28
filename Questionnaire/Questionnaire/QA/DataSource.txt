@@ -440,4 +440,2209 @@
 }
 ]
 },
+{
+"questionId": 1,
+"question": "你觉得你是否是一个聪明的人",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，我是一个聪明的人"
+},
+{
+"answerId": 2,
+"desc": "问题B，我不是一个聪明的人"
+},
+{
+"answerId": 3,
+"desc": "问题C，我既不聪明也不不聪明,你说我聪明不聪明"
+},
+{
+"answerId": 4,
+"desc": "问题D，我不是人"
+}
+]
+},
+{
+"questionId": 2,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 11,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 12,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 13,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 14,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 3,
+"question": "我是问题标题，我是问题标题，我是问题标题，我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 21,
+"desc": "问题A，是第一条数据，是第一条数据，是第一条数据"
+},
+{
+"answerId": 22,
+"desc": "问题B，是第一条数据是第一条数据是第一条数据"
+},
+{
+"answerId": 23,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 24,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 4,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 31,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 32,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 33,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 34,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 5,
+"question": "我是问题标题",
+"mode": 1,
+"required": 1,
+"answers": [
+{
+"answerId": 51,
+"desc": "问题H，是第一条数据"
+},
+{
+"answerId": 52,
+"desc": "问题H，是第一条数据"
+},
+{
+"answerId": 55,
+"desc": "问题E，是第一条数据"
+},
+{
+"answerId": 56,
+"desc": "问题F，是第一条数据"
+},
+{
+"answerId": 57,
+"desc": "问题G，是第一条数据"
+},
+{
+"answerId": 58,
+"desc": "问题H，是第一条数据"
+},
+{
+"answerId": 59,
+"desc": "问题H，是第一条数据"
+}
+]
+},
+{
+"questionId": 6,
+"question": "我是问题标题",
+"mode": 1,
+"required": 0,
+"answers": [
+{
+"answerId": 65,
+"desc": "问题E，是第一条数据"
+},
+{
+"answerId": 66,
+"desc": "问题F，是第一条数据"
+},
+{
+"answerId": 67,
+"desc": "问题G，是第一条数据"
+},
+{
+"answerId": 68,
+"desc": "问题H，是第一条数据"
+}
+]
+},
+{
+"questionId": 7,
+"question": "我是问题标题",
+"mode": 1,
+"required": 1,
+"answers": [
+{
+"answerId": 75,
+"desc": "问题E，是第一条数据"
+},
+{
+"answerId": 76,
+"desc": "问题F，是第一条数据"
+},
+{
+"answerId": 77,
+"desc": "问题G，是第一条数据"
+},
+{
+"answerId": 78,
+"desc": "问题H，是第一条数据"
+}
+]
+},
+{
+"questionId": 8,
+"question": "我是问题标题",
+"mode": 2,
+"required": 1,
+"answers": []
+},
+{
+"questionId": 9,
+"question": "我是问题标题",
+"mode": 2,
+"required": 0,
+"answers": []
+},
+{
+"questionId": 10,
+"question": "我是问题标题",
+"mode": 2,
+"required": 0,
+"answers": []
+},
+{
+"questionId": 11,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 12,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 13,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 14,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 15,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 16,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 17,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 18,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 19,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 20,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 1,
+"question": "你觉得你是否是一个聪明的人",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，我是一个聪明的人"
+},
+{
+"answerId": 2,
+"desc": "问题B，我不是一个聪明的人"
+},
+{
+"answerId": 3,
+"desc": "问题C，我既不聪明也不不聪明,你说我聪明不聪明"
+},
+{
+"answerId": 4,
+"desc": "问题D，我不是人"
+}
+]
+},
+{
+"questionId": 2,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 11,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 12,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 13,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 14,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 3,
+"question": "我是问题标题，我是问题标题，我是问题标题，我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 21,
+"desc": "问题A，是第一条数据，是第一条数据，是第一条数据"
+},
+{
+"answerId": 22,
+"desc": "问题B，是第一条数据是第一条数据是第一条数据"
+},
+{
+"answerId": 23,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 24,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 4,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 31,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 32,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 33,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 34,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 5,
+"question": "我是问题标题",
+"mode": 1,
+"required": 1,
+"answers": [
+{
+"answerId": 51,
+"desc": "问题H，是第一条数据"
+},
+{
+"answerId": 52,
+"desc": "问题H，是第一条数据"
+},
+{
+"answerId": 55,
+"desc": "问题E，是第一条数据"
+},
+{
+"answerId": 56,
+"desc": "问题F，是第一条数据"
+},
+{
+"answerId": 57,
+"desc": "问题G，是第一条数据"
+},
+{
+"answerId": 58,
+"desc": "问题H，是第一条数据"
+},
+{
+"answerId": 59,
+"desc": "问题H，是第一条数据"
+}
+]
+},
+{
+"questionId": 6,
+"question": "我是问题标题",
+"mode": 1,
+"required": 0,
+"answers": [
+{
+"answerId": 65,
+"desc": "问题E，是第一条数据"
+},
+{
+"answerId": 66,
+"desc": "问题F，是第一条数据"
+},
+{
+"answerId": 67,
+"desc": "问题G，是第一条数据"
+},
+{
+"answerId": 68,
+"desc": "问题H，是第一条数据"
+}
+]
+},
+{
+"questionId": 7,
+"question": "我是问题标题",
+"mode": 1,
+"required": 1,
+"answers": [
+{
+"answerId": 75,
+"desc": "问题E，是第一条数据"
+},
+{
+"answerId": 76,
+"desc": "问题F，是第一条数据"
+},
+{
+"answerId": 77,
+"desc": "问题G，是第一条数据"
+},
+{
+"answerId": 78,
+"desc": "问题H，是第一条数据"
+}
+]
+},
+{
+"questionId": 8,
+"question": "我是问题标题",
+"mode": 2,
+"required": 1,
+"answers": []
+},
+{
+"questionId": 9,
+"question": "我是问题标题",
+"mode": 2,
+"required": 0,
+"answers": []
+},
+{
+"questionId": 10,
+"question": "我是问题标题",
+"mode": 2,
+"required": 0,
+"answers": []
+},
+{
+"questionId": 11,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 12,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 13,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 14,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 15,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 16,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 17,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 18,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 19,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 20,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 1,
+"question": "你觉得你是否是一个聪明的人",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，我是一个聪明的人"
+},
+{
+"answerId": 2,
+"desc": "问题B，我不是一个聪明的人"
+},
+{
+"answerId": 3,
+"desc": "问题C，我既不聪明也不不聪明,你说我聪明不聪明"
+},
+{
+"answerId": 4,
+"desc": "问题D，我不是人"
+}
+]
+},
+{
+"questionId": 2,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 11,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 12,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 13,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 14,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 3,
+"question": "我是问题标题，我是问题标题，我是问题标题，我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 21,
+"desc": "问题A，是第一条数据，是第一条数据，是第一条数据"
+},
+{
+"answerId": 22,
+"desc": "问题B，是第一条数据是第一条数据是第一条数据"
+},
+{
+"answerId": 23,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 24,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 4,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 31,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 32,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 33,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 34,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 5,
+"question": "我是问题标题",
+"mode": 1,
+"required": 1,
+"answers": [
+{
+"answerId": 51,
+"desc": "问题H，是第一条数据"
+},
+{
+"answerId": 52,
+"desc": "问题H，是第一条数据"
+},
+{
+"answerId": 55,
+"desc": "问题E，是第一条数据"
+},
+{
+"answerId": 56,
+"desc": "问题F，是第一条数据"
+},
+{
+"answerId": 57,
+"desc": "问题G，是第一条数据"
+},
+{
+"answerId": 58,
+"desc": "问题H，是第一条数据"
+},
+{
+"answerId": 59,
+"desc": "问题H，是第一条数据"
+}
+]
+},
+{
+"questionId": 6,
+"question": "我是问题标题",
+"mode": 1,
+"required": 0,
+"answers": [
+{
+"answerId": 65,
+"desc": "问题E，是第一条数据"
+},
+{
+"answerId": 66,
+"desc": "问题F，是第一条数据"
+},
+{
+"answerId": 67,
+"desc": "问题G，是第一条数据"
+},
+{
+"answerId": 68,
+"desc": "问题H，是第一条数据"
+}
+]
+},
+{
+"questionId": 7,
+"question": "我是问题标题",
+"mode": 1,
+"required": 1,
+"answers": [
+{
+"answerId": 75,
+"desc": "问题E，是第一条数据"
+},
+{
+"answerId": 76,
+"desc": "问题F，是第一条数据"
+},
+{
+"answerId": 77,
+"desc": "问题G，是第一条数据"
+},
+{
+"answerId": 78,
+"desc": "问题H，是第一条数据"
+}
+]
+},
+{
+"questionId": 8,
+"question": "我是问题标题",
+"mode": 2,
+"required": 1,
+"answers": []
+},
+{
+"questionId": 9,
+"question": "我是问题标题",
+"mode": 2,
+"required": 0,
+"answers": []
+},
+{
+"questionId": 10,
+"question": "我是问题标题",
+"mode": 2,
+"required": 0,
+"answers": []
+},
+{
+"questionId": 11,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 12,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 13,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 14,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 15,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 16,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 17,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 18,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 19,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 20,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 1,
+"question": "你觉得你是否是一个聪明的人",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，我是一个聪明的人"
+},
+{
+"answerId": 2,
+"desc": "问题B，我不是一个聪明的人"
+},
+{
+"answerId": 3,
+"desc": "问题C，我既不聪明也不不聪明,你说我聪明不聪明"
+},
+{
+"answerId": 4,
+"desc": "问题D，我不是人"
+}
+]
+},
+{
+"questionId": 2,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 11,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 12,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 13,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 14,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 3,
+"question": "我是问题标题，我是问题标题，我是问题标题，我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 21,
+"desc": "问题A，是第一条数据，是第一条数据，是第一条数据"
+},
+{
+"answerId": 22,
+"desc": "问题B，是第一条数据是第一条数据是第一条数据"
+},
+{
+"answerId": 23,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 24,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 4,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 31,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 32,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 33,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 34,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 5,
+"question": "我是问题标题",
+"mode": 1,
+"required": 1,
+"answers": [
+{
+"answerId": 51,
+"desc": "问题H，是第一条数据"
+},
+{
+"answerId": 52,
+"desc": "问题H，是第一条数据"
+},
+{
+"answerId": 55,
+"desc": "问题E，是第一条数据"
+},
+{
+"answerId": 56,
+"desc": "问题F，是第一条数据"
+},
+{
+"answerId": 57,
+"desc": "问题G，是第一条数据"
+},
+{
+"answerId": 58,
+"desc": "问题H，是第一条数据"
+},
+{
+"answerId": 59,
+"desc": "问题H，是第一条数据"
+}
+]
+},
+{
+"questionId": 6,
+"question": "我是问题标题",
+"mode": 1,
+"required": 0,
+"answers": [
+{
+"answerId": 65,
+"desc": "问题E，是第一条数据"
+},
+{
+"answerId": 66,
+"desc": "问题F，是第一条数据"
+},
+{
+"answerId": 67,
+"desc": "问题G，是第一条数据"
+},
+{
+"answerId": 68,
+"desc": "问题H，是第一条数据"
+}
+]
+},
+{
+"questionId": 7,
+"question": "我是问题标题",
+"mode": 1,
+"required": 1,
+"answers": [
+{
+"answerId": 75,
+"desc": "问题E，是第一条数据"
+},
+{
+"answerId": 76,
+"desc": "问题F，是第一条数据"
+},
+{
+"answerId": 77,
+"desc": "问题G，是第一条数据"
+},
+{
+"answerId": 78,
+"desc": "问题H，是第一条数据"
+}
+]
+},
+{
+"questionId": 8,
+"question": "我是问题标题",
+"mode": 2,
+"required": 1,
+"answers": []
+},
+{
+"questionId": 9,
+"question": "我是问题标题",
+"mode": 2,
+"required": 0,
+"answers": []
+},
+{
+"questionId": 10,
+"question": "我是问题标题",
+"mode": 2,
+"required": 0,
+"answers": []
+},
+{
+"questionId": 11,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 12,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 13,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 14,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 15,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 16,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 17,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 18,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 19,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 20,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 1,
+"question": "你觉得你是否是一个聪明的人",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，我是一个聪明的人"
+},
+{
+"answerId": 2,
+"desc": "问题B，我不是一个聪明的人"
+},
+{
+"answerId": 3,
+"desc": "问题C，我既不聪明也不不聪明,你说我聪明不聪明"
+},
+{
+"answerId": 4,
+"desc": "问题D，我不是人"
+}
+]
+},
+{
+"questionId": 2,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 11,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 12,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 13,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 14,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 3,
+"question": "我是问题标题，我是问题标题，我是问题标题，我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 21,
+"desc": "问题A，是第一条数据，是第一条数据，是第一条数据"
+},
+{
+"answerId": 22,
+"desc": "问题B，是第一条数据是第一条数据是第一条数据"
+},
+{
+"answerId": 23,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 24,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 4,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 31,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 32,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 33,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 34,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 5,
+"question": "我是问题标题",
+"mode": 1,
+"required": 1,
+"answers": [
+{
+"answerId": 51,
+"desc": "问题H，是第一条数据"
+},
+{
+"answerId": 52,
+"desc": "问题H，是第一条数据"
+},
+{
+"answerId": 55,
+"desc": "问题E，是第一条数据"
+},
+{
+"answerId": 56,
+"desc": "问题F，是第一条数据"
+},
+{
+"answerId": 57,
+"desc": "问题G，是第一条数据"
+},
+{
+"answerId": 58,
+"desc": "问题H，是第一条数据"
+},
+{
+"answerId": 59,
+"desc": "问题H，是第一条数据"
+}
+]
+},
+{
+"questionId": 6,
+"question": "我是问题标题",
+"mode": 1,
+"required": 0,
+"answers": [
+{
+"answerId": 65,
+"desc": "问题E，是第一条数据"
+},
+{
+"answerId": 66,
+"desc": "问题F，是第一条数据"
+},
+{
+"answerId": 67,
+"desc": "问题G，是第一条数据"
+},
+{
+"answerId": 68,
+"desc": "问题H，是第一条数据"
+}
+]
+},
+{
+"questionId": 7,
+"question": "我是问题标题",
+"mode": 1,
+"required": 1,
+"answers": [
+{
+"answerId": 75,
+"desc": "问题E，是第一条数据"
+},
+{
+"answerId": 76,
+"desc": "问题F，是第一条数据"
+},
+{
+"answerId": 77,
+"desc": "问题G，是第一条数据"
+},
+{
+"answerId": 78,
+"desc": "问题H，是第一条数据"
+}
+]
+},
+{
+"questionId": 8,
+"question": "我是问题标题",
+"mode": 2,
+"required": 1,
+"answers": []
+},
+{
+"questionId": 9,
+"question": "我是问题标题",
+"mode": 2,
+"required": 0,
+"answers": []
+},
+{
+"questionId": 10,
+"question": "我是问题标题",
+"mode": 2,
+"required": 0,
+"answers": []
+},
+{
+"questionId": 11,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 12,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 13,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 14,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 15,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 16,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 17,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 18,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 19,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+},
+{
+"questionId": 20,
+"question": "我是问题标题",
+"mode": 0,
+"required": 1,
+"answers": [
+{
+"answerId": 1,
+"desc": "问题A，是第一条数据"
+},
+{
+"answerId": 2,
+"desc": "问题B，是第一条数据"
+},
+{
+"answerId": 3,
+"desc": "问题C，是第一条数据"
+},
+{
+"answerId": 4,
+"desc": "问题D，是第一条数据"
+}
+]
+}
 ]
