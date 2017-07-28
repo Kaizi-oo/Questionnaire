@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CYJTextViewCell: UITableViewCell {
+class QATextViewCell: UITableViewCell {
 
     @IBOutlet weak var placeholderLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
@@ -34,7 +34,7 @@ class CYJTextViewCell: UITableViewCell {
 
 }
 
-extension CYJTextViewCell: UITextViewDelegate
+extension QATextViewCell: UITextViewDelegate
 {
     func textViewDidChange(_ textView: UITextView) {
             placeholderLabel.isHidden = textView.text.characters.count > 0

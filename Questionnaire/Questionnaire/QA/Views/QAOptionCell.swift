@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CYJOptionCell: UITableViewCell {
+class QAOptionCell: UITableViewCell {
 
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var descLabel: UILabel!

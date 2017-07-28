@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AnswerCardCell: UICollectionViewCell {
+class QAAnswerCardCell: UICollectionViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     

@@ -10,7 +10,7 @@ import Foundation
 
 import UIKit
 
-class QuestionViewController: UIViewController {
+class QAQuestionViewController: UIViewController {
     
     
     lazy var tableView: UITableView = {
@@ -22,14 +22,14 @@ class QuestionViewController: UIViewController {
         tb.dataSource = self
         tb.separatorStyle = .none
         //注册不同类型问题的不同cell
-        tb.register(UINib(nibName: "CYJOptionCell", bundle: nil), forCellReuseIdentifier: "CYJOptionCell")
-        tb.register(UINib(nibName: "CYJSubjectCell", bundle: nil), forCellReuseIdentifier: "CYJSubjectCell")
-        tb.register(UINib(nibName: "CYJTextViewCell", bundle: nil), forCellReuseIdentifier: "CYJTextViewCell")
+        tb.register(UINib(nibName: "QAOptionCell", bundle: nil), forCellReuseIdentifier: "QAOptionCell")
+        tb.register(UINib(nibName: "QASubjectCell", bundle: nil), forCellReuseIdentifier: "QASubjectCell")
+        tb.register(UINib(nibName: "QATextViewCell", bundle: nil), forCellReuseIdentifier: "QATextViewCell")
         tb.backgroundColor = UIColor.white
         return tb
     }()
     
-    var dataSource: (Question, RealAnswer?)? {
+    var dataSource: (QAQuestion, RealAnswer?)? {
         didSet{
             guard let data = dataSource else {
                 return
@@ -53,7 +53,7 @@ class QuestionViewController: UIViewController {
             tableView.reloadData()
         }
     }
-    var question: Question?
+    var question: QAQuestion?
     
     var realAnswer: RealAnswer?
     
@@ -64,7 +64,7 @@ class QuestionViewController: UIViewController {
     }
 }
 
-extension QuestionViewController: UITableViewDataSource, UITableViewDelegate
+extension QAQuestionViewController: UITableViewDataSource, UITableViewDelegate
 {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
@@ -84,7 +84,7 @@ extension QuestionViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CYJSubjectCell") as! CYJSubjectCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "QASubjectCell") as! QASubjectCell
             let starAttr = NSAttributedString(string: "*", attributes: [NSForegroundColorAttributeName: Q_A.Color.red , NSFontAttributeName: UIFont.systemFont(ofSize: 18)])
             let subjectAttr = NSAttributedString(string: "\(question?.question ?? "未知异常")", attributes: [NSForegroundColorAttributeName: Q_A.Color.drakText , NSFontAttributeName: Q_A.Font.senty(size: 16)])
             
@@ -115,7 +115,7 @@ extension QuestionViewController: UITableViewDataSource, UITableViewDelegate
             cell.selectionStyle = .none
             return cell
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CYJOptionCell")! as! CYJOptionCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "QAOptionCell")! as! QAOptionCell
             let answer = question?.answers[indexPath.row]
             cell.indexPath = indexPath
             cell.descLabel.text = answer?.desc ?? "异常" + "\(question?.questionId ?? 0)"
@@ -148,7 +148,7 @@ extension QuestionViewController: UITableViewDataSource, UITableViewDelegate
             
             return cell
         case 2:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CYJTextViewCell")! as! CYJTextViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "QATextViewCell")! as! QATextViewCell
             cell.selectionStyle = .none
             cell.textView.text = "请输入回答"
             if let _ = realAnswer

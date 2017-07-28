@@ -28,7 +28,7 @@ class QAViewController: UIViewController {
     }
     
     //其实可以合成一个model
-    var questions = [Question]() //问题的数组
+    var questions = [QAQuestion]() //问题的数组
     var realAnswer = [RealAnswer]() //回答的数组
     
     var pageLabel: UILabel! //页码
@@ -69,7 +69,7 @@ class QAViewController: UIViewController {
                 
                 arr?.forEach({ (quest) in
                     if let question = quest as? [String: Any] {
-                        let qqq = Question(question)
+                        let qqq = QAQuestion(question)
                         questions.append(qqq)
                         //                拿到 questions 之后，再创建realAnswers
                         realAnswer.append(RealAnswer(qqq))
@@ -174,7 +174,7 @@ extension QAViewController {
         
         // 根据数据个数，设置controller的数组，并设置数据源
         for i in 0..<questions.count {
-            let current = QuestionViewController()
+            let current = QAQuestionViewController()
             current.view.frame = pageViewController.view.bounds
             current.dataSource = (questions[i], realAnswer[i])
             
@@ -203,7 +203,7 @@ extension QAViewController {
         answerCard.dataSource = self
         answerCard.backgroundColor = UIColor.white
         answerCard.isPagingEnabled = false
-        answerCard.register(UINib(nibName: "AnswerCardCell", bundle: nil), forCellWithReuseIdentifier: "AnswerCardCell")
+        answerCard.register(UINib(nibName: "QAAnswerCardCell", bundle: nil), forCellWithReuseIdentifier: "QAAnswerCardCell")
         answerCard.showsVerticalScrollIndicator = false
         
         //设置边框黄色 背景透明 圆角5
@@ -324,7 +324,7 @@ extension QAViewController {
         print("answer changed")
         let index = realAnswer.index(of: answer!)
         
-        let cell = answerCard.cellForItem(at: IndexPath(item: index!, section: 0)) as? AnswerCardCell
+        let cell = answerCard.cellForItem(at: IndexPath(item: index!, section: 0)) as? QAAnswerCardCell
         
         cell?.isAnswered = !((answer?.answer.isEmpty)!)
     }
@@ -391,7 +391,7 @@ extension QAViewController: UICollectionViewDelegateFlowLayout, UICollectionView
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnswerCardCell", for: indexPath) as! AnswerCardCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QAAnswerCardCell", for: indexPath) as! QAAnswerCardCell
         
         cell.titleLabel.text = "\(indexPath.row + 1)"
         cell.isAnswered = !(realAnswer[indexPath.row].answer.isEmpty)

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Question: NSObject {
+class QAQuestion: NSObject {
     var questionId: Int = 0
     var question: String = "未知异常"
     var mode: Int = 1  // 1, 单选 2，多选， 3 简答
@@ -64,7 +64,7 @@ class RealAnswer: NSObject {
     var answer: String = "" // 用 | 隔开
     var required: Int = 0
     
-    init(_ question: Question) {
+    init(_ question: QAQuestion) {
         super.init()
         questionId = question.questionId
         questionMode = question.mode

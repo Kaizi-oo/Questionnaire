@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CYJSubjectCell: UITableViewCell {
+class QASubjectCell: UITableViewCell {
 
     @IBOutlet weak var subjectLabel: UILabel!
     @IBOutlet weak var backgroundImageView: UIImageView!
