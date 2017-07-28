@@ -340,9 +340,7 @@ extension QAViewController : UIPageViewControllerDelegate, UIPageViewControllerD
         if index == viewControllers.count - 1 { //第一条
             return nil
         }
-        pageLabel.text = "\(index + 1)/\(questions.count)"
-        pageIndex = index + 1
-        return viewControllers[pageIndex]
+        return viewControllers[index + 1]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
@@ -351,10 +349,8 @@ extension QAViewController : UIPageViewControllerDelegate, UIPageViewControllerD
         if index == 0 { //第一条
             return nil
         }
-        pageLabel.text = "\(index + 1)/\(questions.count)"
-        pageIndex = index - 1
         
-        return viewControllers[pageIndex]
+        return viewControllers[index - 1]
     }
 
     func pageViewControllerSupportedInterfaceOrientations(_ pageViewController: UIPageViewController) -> UIInterfaceOrientationMask {
@@ -366,6 +362,7 @@ extension QAViewController : UIPageViewControllerDelegate, UIPageViewControllerD
         //提前设置页码数据，如果翻页中途取消的话，在下面设置回去
         let finishOne = pendingViewControllers.first
         let index  = viewControllers.index(of: finishOne!)
+        pageIndex = index!
         pageLabel.text = "\(index! + 1)/\(questions.count)"
     }
     func pageViewControllerPreferredInterfaceOrientationForPresentation(_ pageViewController: UIPageViewController) -> UIInterfaceOrientation {
@@ -377,7 +374,6 @@ extension QAViewController : UIPageViewControllerDelegate, UIPageViewControllerD
         if !completed {
             //
             let finishOne = previousViewControllers.first
-            
             let index  = viewControllers.index(of: finishOne!)
             pageIndex = index!
             pageLabel.text = "\(index! + 1)/\(questions.count)"
@@ -416,20 +412,20 @@ extension QAViewController: UICollectionViewDelegateFlowLayout, UICollectionView
     }
 }
 
-//MARK: 拓展UIPageViewController，取消了边缘的点击事件
-extension UIPageViewController: UIGestureRecognizerDelegate {
+    //MARK: 拓展UIPageViewController，取消了边缘的点击事件
+    extension UIPageViewController: UIGestureRecognizerDelegate {
 
-    /// 拓展一个方法，取消UIPageViewController的点击边界翻页
-    fileprivate func cancleSideTouch() {
-        for ges in gestureRecognizers {
-            ges.delegate=self;
+        /// 拓展一个方法，取消UIPageViewController的点击边界翻页
+        fileprivate func cancleSideTouch() {
+            for ges in gestureRecognizers {
+                ges.delegate=self;
+            }
+        }
+        
+        public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+            guard gestureRecognizer is UITapGestureRecognizer else {
+                return true
+            }
+            return false
         }
     }
-    
-    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        guard gestureRecognizer is UITapGestureRecognizer else {
-            return true
-        }
-        return false
-    }
-}
