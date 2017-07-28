@@ -10,3 +10,4 @@ demo 使用**UIPageViewController** 实现，包括单选、多选、简答，�
 
 * 通过**通知**实现问题已选和答题卡之间的通讯
 
+详见我的简书:[UIPageController实现 问卷、试卷](http://www.jianshu.com/p/776d6b71071e)
