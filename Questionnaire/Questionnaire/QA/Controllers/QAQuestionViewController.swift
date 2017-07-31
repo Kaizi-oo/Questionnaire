@@ -26,6 +26,7 @@ class QAQuestionViewController: UIViewController {
         tb.register(UINib(nibName: "QASubjectCell", bundle: nil), forCellReuseIdentifier: "QASubjectCell")
         tb.register(UINib(nibName: "QATextViewCell", bundle: nil), forCellReuseIdentifier: "QATextViewCell")
         tb.backgroundColor = UIColor.white
+
         return tb
     }()
     
@@ -62,6 +63,8 @@ class QAQuestionViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.clear
         
+//        view.addSubview(tableView)
+        
     }
 }
 
@@ -87,7 +90,7 @@ extension QAQuestionViewController: UITableViewDataSource, UITableViewDelegate
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "QASubjectCell") as! QASubjectCell
             let starAttr = NSAttributedString(string: "*", attributes: [NSForegroundColorAttributeName: Q_A.Color.red , NSFontAttributeName: UIFont.systemFont(ofSize: 18)])
-            let subjectAttr = NSAttributedString(string: "\(question?.question ?? "未知异常")", attributes: [NSForegroundColorAttributeName: Q_A.Color.drakText , NSFontAttributeName: Q_A.Font.senty(size: 16)])
+            let subjectAttr = NSAttributedString(string: "\(question?.questionId ?? 0)-\(question?.question ?? "未知异常")", attributes: [NSForegroundColorAttributeName: Q_A.Color.drakText , NSFontAttributeName: Q_A.Font.senty(size: 16)])
             
             let attributes = [NSForegroundColorAttributeName: Q_A.Color.white , NSFontAttributeName: UIFont.systemFont(ofSize: 16)]
             var modeAttr:NSAttributedString
@@ -111,7 +114,6 @@ extension QAQuestionViewController: UITableViewDataSource, UITableViewDelegate
             hole.append(modeAttr)
             
             cell.subjectLabel.attributedText = hole
-//                = "\(question?.question ?? "adasdas")    -    " + "\(question?.questionId ?? 0)"
             cell.selectionStyle = .none
             return cell
         case 1:
@@ -127,7 +129,13 @@ extension QAQuestionViewController: UITableViewDataSource, UITableViewDelegate
                     if Int((realAnswer?.answer)!)! == answer?.answerId {
                         DispatchQueue.main.async {
                             //如果是正确答案，那么设置选中
-                            self.tableView.selectRow(at: IndexPath(row: indexPath.row, section: 1), animated: false, scrollPosition: UITableViewScrollPosition.none)
+                            self.tableView.selectRow(at: indexPath, animated: false, scrollPosition: UITableViewScrollPosition.none)
+                        }
+                    }else
+                    {
+                        DispatchQueue.main.async {
+                            //如果是正确答案，那么设置选中
+                            self.tableView.deselectRow(at: indexPath, animated: false)
                         }
                     }
                 case 1:
@@ -136,7 +144,13 @@ extension QAQuestionViewController: UITableViewDataSource, UITableViewDelegate
                     if bool! {
                         DispatchQueue.main.async {
                             //如果是正确答案，那么设置选中
-                            self.tableView.selectRow(at: IndexPath(row: indexPath.row, section: 1), animated: false, scrollPosition: UITableViewScrollPosition.none)
+                            self.tableView.selectRow(at: indexPath, animated: false, scrollPosition: UITableViewScrollPosition.none)
+                        }
+                    }else
+                    {
+                        DispatchQueue.main.async {
+                            //如果是正确答案，那么设置选中
+                            self.tableView.deselectRow(at: indexPath, animated: false)
                         }
                     }
                 default:

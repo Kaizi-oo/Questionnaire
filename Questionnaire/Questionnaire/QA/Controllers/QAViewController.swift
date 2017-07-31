@@ -38,16 +38,13 @@ class QAViewController: UIViewController {
     var answerCard: UICollectionView! //答题卡
     
     var currentController: QAQuestionViewController?
-    var lastController: QAQuestionViewController?
-    var nextController: QAQuestionViewController?
     
     enum QADirection {
         case none
         case last
         case next
-        
-        
     }
+    var translateLock: Bool = false // 枷锁
     
     var direction: QADirection = .none
     
@@ -101,15 +98,6 @@ class QAViewController: UIViewController {
         //取消通知监听
         NotificationCenter.default.removeObserver(self)
     }
-    
-    func setLastController() {
-        //
-        
-    }
-    func setNextController() {
-        //
-    }
-    
     
     //TODO: lifeCircle
     override func viewDidLoad() {
@@ -194,24 +182,20 @@ extension QAViewController {
         shapeLayer.zPosition = -1
         pageViewController.view.layer.addSublayer(shapeLayer)
         
-        
-        // 根据数据个数，设置controller的数组，并设置数据源
+        // 创建2个Controller 留着用
         for _ in 0..<2 {
             let current = QAQuestionViewController()
             current.view.frame = pageViewController.view.bounds
-//            current.dataSource = (questions[i], realAnswer[i])
+            //            current.dataSource = (questions[i], realAnswer[i])
             
             viewControllers.append(current)
         }
         
-//        currentController = QAQuestionViewController()
-//        currentController?.view.frame = pageViewController.view.bounds
-//        currentController?.dataSource = (questions[0], realAnswer[0])
+        let vc = viewControllers.first as? QAQuestionViewController
+        vc?.dataSource = (questions[0], realAnswer[0])
+        currentController = vc
         
-        currentController = viewControllers.first as? QAQuestionViewController
-        currentController?.dataSource = (questions[0], realAnswer[0])
-
-        pageViewController.setViewControllers([currentController!], direction: .forward, animated: true) { (bool) in
+        pageViewController.setViewControllers([vc!], direction: .forward, animated: true) { (bool) in
             print("设置完成")
             self.addChildViewController(self.pageViewController)
             self.view.addSubview(self.pageViewController.view)
@@ -220,7 +204,6 @@ extension QAViewController {
         }
     }
     
-  
     /// 答题卡
     func makeAnswerCard() {
         let flowLayout = UICollectionViewFlowLayout()
@@ -285,29 +268,47 @@ extension QAViewController {
         
     }
     
+    func getNextViewController(viewController: UIViewController?) -> UIViewController? {
+        
+        let vc: QAQuestionViewController?
+        if viewController == viewControllers.first {
+            print(".last")
+            vc = viewControllers.last as? QAQuestionViewController
+        }else
+        {
+            print(".first")
+            vc = viewControllers.first as? QAQuestionViewController
+        }
+        return vc
+    }
+    
     /// 显示相应题目
     ///
     /// - Parameter index: 数组中第几个
     func showTargetQuestion(with index: Int) {
-        //挑走
-        if pageIndex < index {
-            pageIndex = index
-            pageViewController.setViewControllers([viewControllers[pageIndex]], direction: .forward, animated: true) { (bool) in
-                //完成后去更新 上面的数字
+        guard !translateLock else {
+            //正在跳
+            return
+        }
+        //跳走
+        let pDirection: UIPageViewControllerNavigationDirection = pageIndex < index ? .forward : .reverse
+        pageIndex = index
+
+        let vc = getNextViewController(viewController: currentController) as? QAQuestionViewController
+        vc?.dataSource = (questions[pageIndex], realAnswer[pageIndex])
+        
+        translateLock = true
+        pageViewController.setViewControllers([vc!], direction: pDirection, animated: true) { (bool) in
+            self.translateLock = false
+
+            if bool {
+                //设置当前Controller, 完成后去更新 上面的数字
+                self.currentController = vc
                 self.pageLabel.text = "\(index + 1)/\(self.questions.count)"
-                
-            }
-        }else if pageIndex > index
-        {
-            pageIndex = index
-            pageViewController.setViewControllers([viewControllers[pageIndex]], direction: .reverse, animated: true) { (bool) in
-                //完成后去更新 上面的数字
-                self.pageLabel.text = "\(index + 1)/\(self.questions.count)"
-                
             }
         }
     }
-
+    
     /// 检查并提交--检查是否必填项都已完成
     func checkAndUpload() {
         //
@@ -358,109 +359,53 @@ extension QAViewController {
         
         cell?.isAnswered = !((answer?.answer.isEmpty)!)
     }
-    
 }
 
 //MARK: UIPageController的代理事件
 extension QAViewController : UIPageViewControllerDelegate, UIPageViewControllerDataSource{
-
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        //获取即将显示的页面的后一页
-//        let index = viewControllers.index(of: viewController)!
-//        if index == viewControllers.count - 1 { //第一条
-//            return nil
-//        }
-//        return viewControllers[index + 1]
-        print("after")
-        if pageIndex == questions.count - 1 { //最后一条
+        print("after- \(pageIndex)")
+        if (pageIndex == questions.count - 1) || translateLock{ //最后一条
             return nil
         }
         direction = .next
         
-        if currentController == viewControllers.first {
-            let vc = viewControllers.last as? QAQuestionViewController
-            vc?.dataSource = (questions[pageIndex + 1], realAnswer[pageIndex + 1])
-            vc?.title = "\(pageIndex + 1)"
-
-            nextController = viewControllers.last as? QAQuestionViewController
-//            lastController = nil
-
-            return vc
-        }else
-        {
-            let vc = viewControllers.first as? QAQuestionViewController
-            vc?.dataSource = (questions[pageIndex], realAnswer[pageIndex])
-            vc?.title = "\(pageIndex + 1)"
-
-            nextController = viewControllers.first as? QAQuestionViewController
-//            lastController = nil
-
-            return vc
-        }
+        let vc = getNextViewController(viewController: currentController) as? QAQuestionViewController
+        vc?.dataSource = (questions[pageIndex + 1], realAnswer[pageIndex + 1])
+        currentController = vc
+        return vc
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        //获取即将显示的页面的前一页
-//        let index = viewControllers.index(of: viewController)!
-//        if index == 0 { //第一条
-//            return nil
-//        }
-//        
-//        return viewControllers[index - 1]
         print("before")
-
         
-        if pageIndex == 0 { //当前页是第一页，那么
+        if pageIndex == 0 || translateLock{ //当前页是第一页，那么
             return nil
         }
         
         direction = .last
-        if currentController == viewControllers.first {
-            let vc = viewControllers.last as? QAQuestionViewController
-            vc?.dataSource = (questions[pageIndex - 1], realAnswer[pageIndex - 1])
-            vc?.title = "\(pageIndex - 1)"
-            lastController = viewControllers.first as? QAQuestionViewController
-            nextController = nil
-
-            return vc
-        }else
-        {
-            let vc = viewControllers.first as? QAQuestionViewController
-            vc?.title = "\(pageIndex - 1)"
-
-            vc?.dataSource = (questions[pageIndex - 1], realAnswer[pageIndex - 1])
-            lastController = viewControllers.first as? QAQuestionViewController
-            nextController = nil
-            return vc
-        }
+        let vc = getNextViewController(viewController: currentController) as? QAQuestionViewController
+        vc?.dataSource = (questions[pageIndex - 1], realAnswer[pageIndex - 1])
+        currentController = vc
+        return vc
     }
-
+    
     func pageViewControllerSupportedInterfaceOrientations(_ pageViewController: UIPageViewController) -> UIInterfaceOrientationMask {
         return .allButUpsideDown
     }
     
     //将要到--
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
-        //提前设置页码数据，如果翻页中途取消的话，在下面设置回去
-//        let finishOne = pendingViewControllers.first
-//        let index  = viewControllers.index(of: finishOne!)
-//        pageIndex = index!
-
-        if direction == .last { //想上 --
+        translateLock = true
+        
+        if direction == .last {//想上 print("will Trans to last")
             pageIndex -= 1
-            print("will Trans to last")
-
-        }else if direction == .next
-        {
+        }else if direction == .next{// print("will Trans to next")
             pageIndex += 1
-            print("will Trans to next")
-
-        }else
-        {
+        }else{
             print("direction 出错了")
         }
-        
-        currentController = pendingViewControllers.first as? QAQuestionViewController  //设置当前
         pageLabel.text = "\(pageIndex + 1)/\(questions.count)"
     }
     func pageViewControllerPreferredInterfaceOrientationForPresentation(_ pageViewController: UIPageViewController) -> UIInterfaceOrientation {
@@ -470,12 +415,8 @@ extension QAViewController : UIPageViewControllerDelegate, UIPageViewControllerD
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         //判断是否成功，不成功，重新设置回去
         print("complete \(completed)")
-
+        
         if !completed {
-            //
-            let finishOne = previousViewControllers.first
-//            let index  = viewControllers.index(of: finishOne!)
-            currentController = previousViewControllers.first as? QAQuestionViewController  //设置当前
             if direction == .last {
                 pageIndex += 1
             }else if direction == .next
@@ -485,13 +426,10 @@ extension QAViewController : UIPageViewControllerDelegate, UIPageViewControllerD
             {
                 print("direction 出错了")
             }
-            
-            
             pageLabel.text = "\(pageIndex + 1)/\(questions.count)"
-        }else
-        {
-            
+            currentController = previousViewControllers.first as? QAQuestionViewController
         }
+        translateLock = false
     }
 }
 //MARK: 答题卡的代理事件
@@ -526,20 +464,20 @@ extension QAViewController: UICollectionViewDelegateFlowLayout, UICollectionView
     }
 }
 
-    //MARK: 拓展UIPageViewController，取消了边缘的点击事件
-    extension UIPageViewController: UIGestureRecognizerDelegate {
-
-        /// 拓展一个方法，取消UIPageViewController的点击边界翻页
-        fileprivate func cancleSideTouch() {
-            for ges in gestureRecognizers {
-                ges.delegate=self;
-            }
-        }
-        
-        public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-            guard gestureRecognizer is UITapGestureRecognizer else {
-                return true
-            }
-            return false
+//MARK: 拓展UIPageViewController，取消了边缘的点击事件
+extension UIPageViewController: UIGestureRecognizerDelegate {
+    
+    /// 拓展一个方法，取消UIPageViewController的点击边界翻页
+    fileprivate func cancleSideTouch() {
+        for ges in gestureRecognizers {
+            ges.delegate=self;
         }
     }
+    
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        guard gestureRecognizer is UITapGestureRecognizer else {
+            return true
+        }
+        return false
+    }
+}
