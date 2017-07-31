@@ -274,7 +274,7 @@ extension QAViewController {
     func getNextExpectController(index: Int) -> UIViewController {
         
         let ques = questions[index].mode
-        
+//
         let VC = viewControllers.first { (controller) -> Bool in
             let aController = controller as? QAQuestionViewController
             return aController?.lifeCircle == .didDisappear && (aController?.reuseIdentifier)! == "\(ques)"
@@ -289,9 +289,16 @@ extension QAViewController {
             viewControllers.append(current)
             
             print("当前是第几个：\(viewControllers.index(of: current) ?? 999)")
-
+            
             return current
         }
+//        let current = QAQuestionViewController(frame: pageViewController.view.bounds, reuseIdentifier: "\(ques)")
+//        viewControllers.append(current)
+//        
+//        print("当前是第几个：\(viewControllers.index(of: current) ?? 999)")
+//        
+//        return current
+
     }
     
     /// 显示相应题目
@@ -311,6 +318,8 @@ extension QAViewController {
                 //设置当前Controller, 完成后去更新 上面的数字
                 self.currentController = vc
                 self.pageLabel.text = "\(index + 1)/\(self.questions.count)"
+                
+//                self.currentController?.didMove(toParentViewController: self.pageViewController)
             }
         }
     }
@@ -350,11 +359,13 @@ extension QAViewController {
     
     func upload() {
         
-        let request = Alamofire.request(URL(string: "http://111.222.122.322/")!, method: .post, parameters: ["1":[1,2,3,4,5],"2":10], encoding: JSONEncoding.default, headers: nil).responseJSON(queue: DispatchQueue.global(), options: JSONSerialization.ReadingOptions.mutableContainers) { (dataResponds) in
+        let request = Alamofire.request(URL(string: "http://192.168.2.202:8080/user/login")!, method: .post, parameters: ["username":["1":10 ,"2":[1,2,3,4,5], "3": "wo shi tian kong"]], encoding: URLEncoding.default, headers: nil).responseJSON(queue: DispatchQueue.global(), options: JSONSerialization.ReadingOptions.mutableContainers) { (dataResponds) in
             //
+            
+            print(dataResponds)
         }
         
-        print(request.request ?? URLRequest(url: URL(string: "http://111.222.122.322/")!))
+        print(request.request?.url ?? URLRequest(url: URL(string: "http://111.222.122.322/")!))
         
     }
     
