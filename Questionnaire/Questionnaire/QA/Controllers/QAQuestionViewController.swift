@@ -13,9 +13,37 @@ import UIKit
 class QAQuestionViewController: UIViewController {
     
     
+    enum Life {
+        case didLoad
+        case willAppear
+        case didAppear
+        case willDisappear
+        case didDisappear
+    }
+    var lifeCircle: Life = .didLoad
+    var reuseIdentifier: String!
+    
+    init(frame: CGRect, reuseIdentifier: String) {
+        super.init(nibName: nil, bundle: nil)
+        
+        view.frame = frame
+        self.reuseIdentifier = reuseIdentifier
+        print("1::\(view.frame)")
+        
+        view.addSubview(tableView)
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     lazy var tableView: UITableView = {
 
         let tb = UITableView(frame: CGRect(x: 5, y: 1, width: self.view.frame.width - 10, height: self.view.frame.height - 2), style: .grouped)
+        print("2::\(self.view.frame)")
+
         tb.estimatedRowHeight = 44
         tb.rowHeight = UITableViewAutomaticDimension
         tb.delegate = self
@@ -50,7 +78,7 @@ class QAQuestionViewController: UIViewController {
                 break
             }
             realAnswer = data.1
-            view.addSubview(tableView)
+//            view.addSubview(tableView)
             tableView.reloadData()
             
         }
@@ -59,14 +87,50 @@ class QAQuestionViewController: UIViewController {
     
     var realAnswer: RealAnswer?
     
+//    var transitioning: Bool = false
+    
+
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("\(self)-viewWillAppear")
+//        transitioning = true
+        self.lifeCircle = .willAppear
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("\(self)-viewDidAppear")
+//        transitioning = false
+        self.lifeCircle = .didAppear
+
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("\(self)-viewWillDisappear")
+//        transitioning = true
+        self.lifeCircle = .willDisappear
+
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("\(self)-viewDidDisappear")
+//        transitioning = false
+        self.lifeCircle = .didDisappear
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.clear
-        
-//        view.addSubview(tableView)
+//        transitioningDelegate = self
         
     }
+    
 }
+
 
 extension QAQuestionViewController: UITableViewDataSource, UITableViewDelegate
 {
