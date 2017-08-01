@@ -10,12 +10,13 @@ import Foundation
 
 import UIKit
 
-class QAQuestionViewController: UIViewController {
-    
+class QAQuestionViewController: QABaseQuestionController {
     
     lazy var tableView: UITableView = {
 
         let tb = UITableView(frame: CGRect(x: 5, y: 1, width: self.view.frame.width - 10, height: self.view.frame.height - 2), style: .grouped)
+        print("2::\(self.view.frame)")
+
         tb.estimatedRowHeight = 44
         tb.rowHeight = UITableViewAutomaticDimension
         tb.delegate = self
@@ -50,7 +51,6 @@ class QAQuestionViewController: UIViewController {
                 break
             }
             realAnswer = data.1
-            view.addSubview(tableView)
             tableView.reloadData()
             
         }
@@ -59,14 +59,18 @@ class QAQuestionViewController: UIViewController {
     
     var realAnswer: RealAnswer?
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        view.addSubview(tableView)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.clear
-        
-//        view.addSubview(tableView)
-        
     }
+    
 }
+
 
 extension QAQuestionViewController: UITableViewDataSource, UITableViewDelegate
 {

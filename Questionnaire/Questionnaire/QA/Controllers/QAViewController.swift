@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+import Alamofire
+
 class QAViewController: UIViewController {
     
     var pageViewController: UIPageViewController!
@@ -44,7 +46,7 @@ class QAViewController: UIViewController {
         case last
         case next
     }
-    var translateLock: Bool = false // 枷锁
+//    var translateLock: Bool = false // 枷锁
     
     var direction: QADirection = .none
     
@@ -182,16 +184,7 @@ extension QAViewController {
         shapeLayer.zPosition = -1
         pageViewController.view.layer.addSublayer(shapeLayer)
         
-        // 创建2个Controller 留着用
-        for _ in 0..<2 {
-            let current = QAQuestionViewController()
-            current.view.frame = pageViewController.view.bounds
-            //            current.dataSource = (questions[i], realAnswer[i])
-            
-            viewControllers.append(current)
-        }
-        
-        let vc = viewControllers.first as? QAQuestionViewController
+        let vc = getNextExpectController(index: 0) as? QAQuestionViewController
         vc?.dataSource = (questions[0], realAnswer[0])
         currentController = vc
         
@@ -248,8 +241,6 @@ extension QAViewController {
     func nextButtonAction() {
         
         if pageIndex < questions.count - 1 {
-            print("next button clicked")
-            
             showTargetQuestion(with: self.pageIndex + 1)
             
         }else if pageIndex == questions.count - 1 {
@@ -265,53 +256,57 @@ extension QAViewController {
                 //
             })
         }
-        
     }
     
-    func getNextViewController(viewController: UIViewController?) -> UIViewController? {
+    func getNextExpectController(index: Int) -> UIViewController {
         
-        let vc: QAQuestionViewController?
-        if viewController == viewControllers.first {
-            print(".last")
-            vc = viewControllers.last as? QAQuestionViewController
+        let ques = questions[index].mode
+        //获取第一个满足要求的界面
+        let VC = viewControllers.first { (controller) -> Bool in
+            let aController = controller as? QAQuestionViewController
+            return aController?.lifeCircle == .didDisappear && (aController?.reuseIdentifier)! == "\(ques)"
+        }
+        
+        if VC != nil {
+            //把当前的VC挪到最后一个，尽量让所有已存在的VC均匀被使用
+            viewControllers.remove(at: viewControllers.index(of: VC!)!)
+            viewControllers.append(VC!)
+            return VC!
         }else
         {
-            print(".first")
-            vc = viewControllers.first as? QAQuestionViewController
+            let current = QAQuestionViewController(frame: pageViewController.view.bounds, reuseIdentifier: "\(ques)")
+            viewControllers.append(current)
+            
+//            print("已经有：\(viewControllers.index(of: current) ?? 999)个界面")
+            return current
         }
-        return vc
     }
     
     /// 显示相应题目
     ///
     /// - Parameter index: 数组中第几个
     func showTargetQuestion(with index: Int) {
-        guard !translateLock else {
-            //正在跳
-            return
-        }
-        //跳走
+
         let pDirection: UIPageViewControllerNavigationDirection = pageIndex < index ? .forward : .reverse
         pageIndex = index
 
-        let vc = getNextViewController(viewController: currentController) as? QAQuestionViewController
+        let vc = getNextExpectController(index: index) as? QAQuestionViewController
         vc?.dataSource = (questions[pageIndex], realAnswer[pageIndex])
         
-        translateLock = true
         pageViewController.setViewControllers([vc!], direction: pDirection, animated: true) { (bool) in
-            self.translateLock = false
 
             if bool {
                 //设置当前Controller, 完成后去更新 上面的数字
                 self.currentController = vc
                 self.pageLabel.text = "\(index + 1)/\(self.questions.count)"
-            }
+                }
         }
     }
     
     /// 检查并提交--检查是否必填项都已完成
     func checkAndUpload() {
         //
+        upload()
         let unDidAnswers = realAnswer.filter { (answer) -> Bool in
             return (answer.answer.isEmpty && answer.required == 1)
         }
@@ -341,6 +336,18 @@ extension QAViewController {
         }
     }
     
+    func upload() {
+        
+        let request = Alamofire.request(URL(string: "http://192.168.2.202:8080/user/login")!, method: .post, parameters: ["username":["1":10 ,"2":[1,2,3,4,5], "3": "wo shi tian kong"]], encoding: URLEncoding.default, headers: nil).responseJSON(queue: DispatchQueue.global(), options: JSONSerialization.ReadingOptions.mutableContainers) { (dataResponds) in
+            //
+            
+            print(dataResponds)
+        }
+        
+        print(request.request?.url ?? URLRequest(url: URL(string: "http://111.222.122.322/")!))
+        
+    }
+    
     /// 添加通知监听
     func addNotification() {
         
@@ -366,12 +373,14 @@ extension QAViewController : UIPageViewControllerDelegate, UIPageViewControllerD
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         print("after- \(pageIndex)")
-        if (pageIndex == questions.count - 1) || translateLock{ //最后一条
+        if (pageIndex == questions.count - 1)// || translateLock
+        { //最后一条
             return nil
         }
         direction = .next
         
-        let vc = getNextViewController(viewController: currentController) as? QAQuestionViewController
+        let vc = getNextExpectController(index: pageIndex + 1) as? QAQuestionViewController
+
         vc?.dataSource = (questions[pageIndex + 1], realAnswer[pageIndex + 1])
         currentController = vc
         return vc
@@ -380,12 +389,14 @@ extension QAViewController : UIPageViewControllerDelegate, UIPageViewControllerD
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         print("before")
         
-        if pageIndex == 0 || translateLock{ //当前页是第一页，那么
+        if pageIndex == 0 //|| translateLock
+        { //当前页是第一页，那么
             return nil
         }
         
         direction = .last
-        let vc = getNextViewController(viewController: currentController) as? QAQuestionViewController
+        let vc = getNextExpectController(index: pageIndex - 1) as? QAQuestionViewController
+
         vc?.dataSource = (questions[pageIndex - 1], realAnswer[pageIndex - 1])
         currentController = vc
         return vc
@@ -397,7 +408,7 @@ extension QAViewController : UIPageViewControllerDelegate, UIPageViewControllerD
     
     //将要到--
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
-        translateLock = true
+//        translateLock = true
         
         if direction == .last {//想上 print("will Trans to last")
             pageIndex -= 1
@@ -429,7 +440,7 @@ extension QAViewController : UIPageViewControllerDelegate, UIPageViewControllerD
             pageLabel.text = "\(pageIndex + 1)/\(questions.count)"
             currentController = previousViewControllers.first as? QAQuestionViewController
         }
-        translateLock = false
+//        translateLock = false
     }
 }
 //MARK: 答题卡的代理事件
@@ -480,4 +491,5 @@ extension UIPageViewController: UIGestureRecognizerDelegate {
         }
         return false
     }
+
 }
