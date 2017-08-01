@@ -261,14 +261,14 @@ extension QAViewController {
     func getNextExpectController(index: Int) -> UIViewController {
         
         let ques = questions[index].mode
-//
+        //获取第一个满足要求的界面
         let VC = viewControllers.first { (controller) -> Bool in
             let aController = controller as? QAQuestionViewController
             return aController?.lifeCircle == .didDisappear && (aController?.reuseIdentifier)! == "\(ques)"
         }
         
         if VC != nil {
-            print("当前是第几个：\(viewControllers.index(of: VC!) ?? 999)")
+            //把当前的VC挪到最后一个，尽量让所有已存在的VC均匀被使用
             viewControllers.remove(at: viewControllers.index(of: VC!)!)
             viewControllers.append(VC!)
             return VC!
@@ -277,7 +277,7 @@ extension QAViewController {
             let current = QAQuestionViewController(frame: pageViewController.view.bounds, reuseIdentifier: "\(ques)")
             viewControllers.append(current)
             
-            print("当前是第几个：\(viewControllers.index(of: current) ?? 999)")
+//            print("已经有：\(viewControllers.index(of: current) ?? 999)个界面")
             return current
         }
     }

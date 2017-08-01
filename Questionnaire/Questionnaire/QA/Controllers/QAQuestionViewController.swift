@@ -59,31 +59,10 @@ class QAQuestionViewController: QABaseQuestionController {
     
     var realAnswer: RealAnswer?
     
-//    var transitioning: Bool = false
-    
-
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.lifeCircle = .willAppear
         view.addSubview(tableView)
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.lifeCircle = .didAppear
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.lifeCircle = .willDisappear
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        self.lifeCircle = .didDisappear
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

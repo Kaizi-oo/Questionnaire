@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 
 class QABaseQuestionController: UIViewController {
-    
-    
     /// 模仿一个生命周期，因为没找到直接获取当前生命周期的方法
     enum Life {
         case didLoad
@@ -35,6 +33,24 @@ class QABaseQuestionController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.lifeCircle = .willAppear
+    }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.lifeCircle = .didAppear
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.lifeCircle = .willDisappear
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.lifeCircle = .didDisappear
+    }
 }
     
