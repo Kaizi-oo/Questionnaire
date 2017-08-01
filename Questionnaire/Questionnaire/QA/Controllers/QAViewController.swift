@@ -184,16 +184,6 @@ extension QAViewController {
         shapeLayer.zPosition = -1
         pageViewController.view.layer.addSublayer(shapeLayer)
         
-        // 创建2个Controller 留着用
-//        for _ in 0..<2 {
-//            let current = QAQuestionViewController()
-//            current.view.frame = pageViewController.view.bounds
-//            //            current.dataSource = (questions[i], realAnswer[i])
-//            
-//            viewControllers.append(current)
-//        }
-        
-//        let vc = viewControllers.first as? QAQuestionViewController
         let vc = getNextExpectController(index: 0) as? QAQuestionViewController
         vc?.dataSource = (questions[0], realAnswer[0])
         currentController = vc
@@ -203,7 +193,7 @@ extension QAViewController {
             self.addChildViewController(self.pageViewController)
             self.view.addSubview(self.pageViewController.view)
             
-//            self.pageViewController.didMove(toParentViewController: self) //前面两句已经加了，这句是什么意思？
+            self.pageViewController.didMove(toParentViewController: self) //前面两句已经加了，这句是什么意思？
         }
     }
     
@@ -251,8 +241,6 @@ extension QAViewController {
     func nextButtonAction() {
         
         if pageIndex < questions.count - 1 {
-//            print("next button clicked")
-            
             showTargetQuestion(with: self.pageIndex + 1)
             
         }else if pageIndex == questions.count - 1 {
@@ -268,7 +256,6 @@ extension QAViewController {
                 //
             })
         }
-        
     }
     
     func getNextExpectController(index: Int) -> UIViewController {
@@ -282,6 +269,8 @@ extension QAViewController {
         
         if VC != nil {
             print("当前是第几个：\(viewControllers.index(of: VC!) ?? 999)")
+            viewControllers.remove(at: viewControllers.index(of: VC!)!)
+            viewControllers.append(VC!)
             return VC!
         }else
         {
@@ -289,16 +278,8 @@ extension QAViewController {
             viewControllers.append(current)
             
             print("当前是第几个：\(viewControllers.index(of: current) ?? 999)")
-            
             return current
         }
-//        let current = QAQuestionViewController(frame: pageViewController.view.bounds, reuseIdentifier: "\(ques)")
-//        viewControllers.append(current)
-//        
-//        print("当前是第几个：\(viewControllers.index(of: current) ?? 999)")
-//        
-//        return current
-
     }
     
     /// 显示相应题目
@@ -318,9 +299,7 @@ extension QAViewController {
                 //设置当前Controller, 完成后去更新 上面的数字
                 self.currentController = vc
                 self.pageLabel.text = "\(index + 1)/\(self.questions.count)"
-                
-//                self.currentController?.didMove(toParentViewController: self.pageViewController)
-            }
+                }
         }
     }
     

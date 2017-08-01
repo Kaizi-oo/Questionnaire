@@ -10,34 +10,7 @@ import Foundation
 
 import UIKit
 
-class QAQuestionViewController: UIViewController {
-    
-    
-    enum Life {
-        case didLoad
-        case willAppear
-        case didAppear
-        case willDisappear
-        case didDisappear
-    }
-    var lifeCircle: Life = .didLoad
-    var reuseIdentifier: String!
-    
-    init(frame: CGRect, reuseIdentifier: String) {
-        super.init(nibName: nil, bundle: nil)
-        
-        view.frame = frame
-        self.reuseIdentifier = reuseIdentifier
-        print("1::\(view.frame)")
-        
-        view.addSubview(tableView)
-        
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+class QAQuestionViewController: QABaseQuestionController {
     
     lazy var tableView: UITableView = {
 
@@ -78,7 +51,6 @@ class QAQuestionViewController: UIViewController {
                 break
             }
             realAnswer = data.1
-//            view.addSubview(tableView)
             tableView.reloadData()
             
         }
@@ -93,31 +65,22 @@ class QAQuestionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("\(self)-viewWillAppear")
-//        transitioning = true
         self.lifeCircle = .willAppear
+        view.addSubview(tableView)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("\(self)-viewDidAppear")
-//        transitioning = false
         self.lifeCircle = .didAppear
-
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        print("\(self)-viewWillDisappear")
-//        transitioning = true
         self.lifeCircle = .willDisappear
-
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        print("\(self)-viewDidDisappear")
-//        transitioning = false
         self.lifeCircle = .didDisappear
     }
     
@@ -125,8 +88,6 @@ class QAQuestionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.clear
-//        transitioningDelegate = self
-        
     }
     
 }
